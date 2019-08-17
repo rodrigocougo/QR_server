@@ -37,7 +37,7 @@ app.use('/mysql/find_quiz', find_quizRouter_mysql);
 //conexão com mongo
 //mongoose.connect("mongodb://localhost:27017/quantic_recruitment", {
 mongoose.connect("mongodb+srv://quantic:102030@quantic-db-dlvxc.mongodb.net/test?retryWrites=true&w=majority", {
-    useNewUrlParser: true, useCreateIndex: true
+    useNewUrlParser: true, useCreateIndex: true 
     }).then(() => {
         console.log("MongoDB Conectado...")
     }).catch((err) => {

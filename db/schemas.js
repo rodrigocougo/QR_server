@@ -8,22 +8,22 @@ const QuizSchema = mongoose.Schema({
         descricao: {type: String, require: true}, 
         total_questoes: {type: Number, default: 0}, 
         tipo: {type: String}, 
-        ult_atualizacao: {type: Date, default: Date.now}
+        ult_atualizacao: {type: Date, default: Date.now}, 
+        quizQuestoesSchema: [{
+            categoria: {type: String, require: true}, 
+            grupo: {type: String, require: true}, 
+            descricao: {type: String, require: true}, 
+            quant_respostas: {type: Number, default: 0}, 
+            respostas_aleatorias: {type: Boolean, default: false},        
+            quizRespostasSchema: [{
+                descricao: {type: String, require: true}, 
+                ordem: {type: Number, require: 0}, 
+                pontos: {type: Number, default: 0}, 
+                status: {type: Number, default: 1}, 
+                resposta: {type: Boolean, default: false}
+            }]
+        }],
     }], 
-    quizQuestoesSchema: [{
-        categoria: {type: String, require: true}, 
-        grupo: {type: String, require: true}, 
-        descricao: {type: String, require: true}, 
-        quant_respostas: {type: Number, default: 0}, 
-        respostas_aleatorias: {type: Boolean, default: false}        
-    }], 
-    quizRespostasSchema: [{
-        descricao: {type: String, require: true}, 
-        ordem: {type: Number, require: 0}, 
-        pontos: {type: Number, default: 0}, 
-        status: {type: Number, default: 1}, 
-        resposta: {type: Boolean, default: false}
-    }]
 });
 //*************************** */
 
