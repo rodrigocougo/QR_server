@@ -9,25 +9,10 @@ const quiz = mongoose.model("QuanticQuiz");
 router.post('/', function(req, res, next) {
     console.log(req.body);
     console.log(req.body.quizSessoesSchema.descricao);
-    
-    const newQuiz = new quiz({
-        quizSessoesSchema: req.body.quizSessoesSchema, 
-        quizQuestoesSchema: req.body.quizQuestoesSchema,
-        quizRespostasSchema: req.body.quizRespostasSchema
-      });
-      
-      newQuiz.save().then(() => {
-          console.log("Cadastro sucesso!");
-      }).catch((err) => {
-          console.log("erro: " + err)
-          res.status(201).json({
-            message: "Falha no insert: erro: " + err
-    
-        });
-      });
+
 
     
-  //res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
