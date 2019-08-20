@@ -15,15 +15,16 @@ module.exports = { findClientes }*/
 
 
 
-const mongoose = require("mongoose");
+/* const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/quantic_recruitment", {
-    useNewUrlParser: true
+    useNewUrlParser: true, 
+    useFindAndModify: false
     }).then(() => {
         console.log("MongoDB Conectado...")
     }).catch((err) => {
         console.log("Houve um erro ao se conectar ao mongoDB: " + err)
-    })
+    }) */
 
     /* function CriaDB_briefing(){
         const BriefingSchema = mongoose.Schema({

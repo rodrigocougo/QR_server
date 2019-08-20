@@ -25,6 +25,24 @@ const QuizSchema = mongoose.Schema({
         }],
     }], 
 });
+
+//*************************** */
+//Schema do QUANTIC QUIZ / RANKING
+const ranking = mongoose.Schema({
+    ranking: {
+        empresa: {type: String, require: true}, 
+        ranking: {type: Number, require: true, default: 0}, 
+        resultado: {type: String, require: true}, 
+        data_criacao: {type: Date, default: Date.now}, 
+        resultados: [{
+            sessao_tipo: {type: String, require: true}, 
+            questao_grupo: {type: String, require: true}, 
+            questao_categoria: {type: String, require: true}, 
+            resposta: {type: Number, require: true},             
+            resposta_pontuacao: {type: Number, require: true, default: 0}
+        }]
+    }
+});
 //*************************** */
 
 var BriefingSchema = mongoose.Schema({
@@ -62,10 +80,11 @@ var BriefingSchema = mongoose.Schema({
 
 mongoose.model("ModelBriefing", BriefingSchema);
 mongoose.model("QuanticQuiz", QuizSchema);
+mongoose.model("ranking", ranking);
 
 
 /* new ModelBriefing({
-    dados_empresa: {
+    dados_empresa: {ranking
         breve_descricao: "teste"
     }
   }).save().then(() => {
